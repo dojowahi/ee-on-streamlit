@@ -1,0 +1,9 @@
+geemap
+geopandas
+ee
+leafmap
+plotly
+pandas
+streamlit==1.12.2
+streamlit-bokeh-events
+streamlit-folium
