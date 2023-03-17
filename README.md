@@ -11,7 +11,7 @@ The code can be replicated and executed on your local machine or any other hyper
 
 
 ## Setting up the demo
-**1)** In Cloud Shell or other environment where you have the gcloud SDK installed, execute the following commands:
+In Cloud Shell or other environment where you have the gcloud SDK installed, execute the following commands:
 ```console
 gcloud components update 
 cd $HOME
