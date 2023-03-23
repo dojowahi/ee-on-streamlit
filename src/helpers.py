@@ -20,6 +20,7 @@ def ee_authentication():
 
 def buildings(state):
     try:
+        state = state.replace(" ", "")
         fc = ee.FeatureCollection(f'projects/sat-io/open-datasets/MSBuildings/US/{state}')
     except:
         st.error('No data available for the selected state.')
