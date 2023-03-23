@@ -5,7 +5,7 @@ The code can be replicated and executed on your local machine or any other hyper
 
 ## Objective
 
-The app uses GEE's Dynaminc World data and merges it with Global building footprint data. Uisng the app the suer will choose a state and county in USA for a paticular year. The app then analyses Dynamic World data for the chosen year against 2022 and generates an app which displays the new built up area in red. You can then use the split-mpa slider to figure out which building were built since the year you chose. The area where the red from Dynamic world (left split map) overlaps with the pink from Global building footprint are the structures built.
+The app uses GEE's Dynaminc World data and merges it with Global building footprint data. Using the app the suer will choose a state and county in USA for a paticular year. The app then analyses Dynamic World data for the chosen year against 2022 and generates an app which displays the new built up area in red. You can then use the split-mpa slider to figure out which building were built since the year you chose. The area where the red from Dynamic world (left split map) overlaps with the pink from Global building footprint are the structures built.
 
 ## Requirements
 
