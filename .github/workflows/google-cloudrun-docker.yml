@@ -62,8 +62,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Google Auth
-
 
       # NOTE: Alternative option - authentication via credentials json
       - name: Google Auth
