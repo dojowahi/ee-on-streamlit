@@ -70,7 +70,7 @@ jobs:
         id: auth
         uses: 'google-github-actions/auth@v0'
         with:
-          credentials_json: '${{ secrets.GCP_SA_KEY_JSON}}'''
+          credentials_json: '${{ secrets.GCP_SA_KEY_JSON}}'
 
       # BEGIN - Docker auth and build (NOTE: If you already have a container image, these Docker steps can be omitted)
 
@@ -79,8 +79,8 @@ jobs:
         id: docker-auth
         uses: 'docker/login-action@v2'
         with:
-          username: '${{ secrets.GCP_SA_ACCOUNT}}''
-          password: '${{ secrets.GCP_SA_KEY_JSON}}''
+          username: '${{ secrets.GCP_SA_ACCOUNT}}'
+          password: '${{ secrets.GCP_SA_KEY_JSON}}'
           registry: '${{ secrets.GAR_LOCATION }}-docker.pkg.dev'
 
       - name: Build and Push Container
