@@ -12,6 +12,7 @@ import io
 import time
 import logging
 import os
+from google.auth import compute_engine
 
 # Secrets
 def ee_authentication():
@@ -20,15 +21,19 @@ def ee_authentication():
     # service_account = st.secrets["service_account"]
     
     # Using secrets fro Github Actions
-    json_data = os.environ["GCP_SA_KEY_JSON"]
-    service_account = os.environ["GCP_SA_ACCOUNT"]
+    # json_data = os.environ["GCP_SA_KEY_JSON"]
+    # service_account = os.environ["GCP_SA_ACCOUNT"]
 
-    # Preparing values
-    json_object = json.loads(json_data, strict=False)
-    json_object = json.dumps(json_object)
+    # # Preparing values
+    # json_object = json.loads(json_data, strict=False)
+    # json_object = json.dumps(json_object)
 
-    # Authorising the app
-    credentials = ee.ServiceAccountCredentials(service_account, key_data=json_object)
+    # # Authorising the app
+    # credentials = ee.ServiceAccountCredentials(service_account, key_data=json_object)
+    # ee.Initialize(credentials)
+
+    scopes = ["https://www.googleapis.com/auth/earthengine"]
+    credentials = compute_engine.Credentials(scopes=scopes)
     ee.Initialize(credentials)
 
 def buildings(state):
