@@ -14,7 +14,7 @@ st.sidebar.info(markdown)
 
 
 # Customize page title
-st.title("Streamlit for Geospatial Applications")
+st.title("Streamlit on Cloud Run for Earth Engine apps")
 
 st.markdown(
     """
