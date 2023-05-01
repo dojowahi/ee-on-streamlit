@@ -12,8 +12,4 @@ google-cloud-bigquery==3.10.0
 google-cloud-core==2.3.2
 google-cloud-storage==2.8.0
 db-dtypes==1.1.1
-<<<<<<< HEAD
 leafmap==0.20.0
-=======
-leafmap==0.20.0
->>>>>>> 12caf0ae9f1dcc9541634af868f2e07cc21bcdc7
