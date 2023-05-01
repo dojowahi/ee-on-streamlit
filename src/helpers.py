@@ -11,6 +11,7 @@ from google.cloud import storage
 import io
 import time
 import logging
+import os
 
 # Secrets
 def ee_authentication():
