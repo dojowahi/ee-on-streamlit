@@ -19,10 +19,6 @@ def ee_authentication():
     # Using secrets from Streamlit
     # json_data = st.secrets["json_data"]
     # service_account = st.secrets["service_account"]
-    
-    # Using secrets fro Github Actions
-    # json_data = os.environ["GCP_SA_KEY_JSON"]
-    # service_account = os.environ["GCP_SA_ACCOUNT"]
 
     # # Preparing values
     # json_object = json.loads(json_data, strict=False)
