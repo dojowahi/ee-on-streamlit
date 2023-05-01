@@ -15,6 +15,7 @@ COPY /src/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the app to the container
-COPY /src/ .
+COPY src/ .
+RUN ls --recursive /app/
 
 CMD streamlit run --server.port 8080 --server.enableCORS false app.py
