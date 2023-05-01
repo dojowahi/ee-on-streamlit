@@ -7,3 +7,6 @@ pandas
 streamlit==1.12.2
 streamlit-bokeh-events
 streamlit-folium
+google-cloud-bigquery
+google-cloud-storage
+db-dtypes
