@@ -49,10 +49,13 @@ on:
     branches: [ "main" ]
 
 env:
-  PROJECT_ID: dekart-on-gcp
+  PROJECT_ID: '${{ secrets.GCP_PROJECT_ID}}'
   GAR_LOCATION: us-central1
   SERVICE: ee-github-apps
   REGION: us-central1
+  GCP_SA_KEY_JSON: '${{ secrets.GCP_SA_KEY_JSON}}'
+  GCP_SA_ACCOUNT: '${{ secrets.GCP_SA_ACCOUNT}}'
+
 
 jobs:
   deploy:
