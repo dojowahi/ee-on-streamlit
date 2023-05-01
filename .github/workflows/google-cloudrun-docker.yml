@@ -48,6 +48,7 @@ on:
   push:
     branches: [ "main" ]
 
+# Argolis project
 env:
   PROJECT_ID: dekart-on-gcp
   GAR_LOCATION: us-central1
