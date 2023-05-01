@@ -55,7 +55,6 @@ env:
   REGION: us-central1
   
 
-
 jobs:
   deploy:
     # Add 'id-token' with the intended permissions for workload identity federation
@@ -106,7 +105,6 @@ jobs:
           flags: '--allow-unauthenticated'
           secrets:  |
             GCP_SA_KEY_JSON=${{ secrets.GCP_SA_KEY_JSON}}
-            GCP_SA_ACCOUNT=${{ secrets.GCP_SA_ACCOUNT}}
 
 
       # If required, use the Cloud Run url output in later steps
