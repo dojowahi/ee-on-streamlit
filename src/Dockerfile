@@ -9,12 +9,12 @@ WORKDIR /app
 
 
 # Copy the requirements.txt file to the container
-COPY requirements.txt .
+COPY /src/requirements.txt .
 
 # Install the app's dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the app to the container
-COPY . .
+COPY /src/. .
 
 CMD streamlit run --server.port 8080 --server.enableCORS false app.py
