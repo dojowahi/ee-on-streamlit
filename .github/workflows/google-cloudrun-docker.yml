@@ -57,7 +57,7 @@ env:
 
 jobs:
   lint:
-    uns-on: ubuntu-latest
+    runs-on: ubuntu-latest
     name: Checks
     steps:
     - uses: actions/checkout@v2
