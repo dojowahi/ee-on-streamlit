@@ -53,12 +53,29 @@ env:
   GAR_LOCATION: us-central1
   SERVICE: ee-github-apps
   REGION: us-central1
-  
+
 
 jobs:
+  lint:
+    uns-on: ubuntu-latest
+    name: Checks
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependency
+      run: |
+        pip install --upgrade pip
+        pip install "flake8==6.0.0"
+
+    - name: Run checks
+      run: |
+        flake8 $(git ls-files '*.py')
   build:
     # Add 'id-token' with the intended permissions for workload identity federation
     name: build
+    needs: lint
     permissions:
       contents: 'read'
       id-token: 'write'
