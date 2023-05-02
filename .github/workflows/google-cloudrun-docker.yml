@@ -42,7 +42,7 @@
 #   Container Registry vs Artifact Registry   - https://cloud.google.com/blog/products/application-development/understanding-artifact-registry-vs-container-registry
 #   Principle of least privilege              - https://cloud.google.com/blog/products/identity-security/dont-get-pwned-practicing-the-principle-of-least-privilege
 
-name: Build and Deploy to Cloud Run
+name: Lint,Build and Deploy to Cloud Run
 
 on:
   push:
@@ -56,14 +56,14 @@ env:
   
 
 jobs:
-  deploy:
+  build:
     # Add 'id-token' with the intended permissions for workload identity federation
+    name: build
     permissions:
       contents: 'read'
       id-token: 'write'
 
     runs-on: ubuntu-latest
-    environment: PROD
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -94,6 +94,12 @@ jobs:
 
       # END - Docker auth and build
 
+  deploy:
+    name: deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    
       - name: Deploy to Cloud Run
         id: deploy
         uses: google-github-actions/deploy-cloudrun@v0
