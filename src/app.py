@@ -18,7 +18,7 @@ st.title("Streamlit on Cloud Run for Earth Engine apps")
 
 st.markdown(
     """
-    This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io) and Google Earth Engine. 
+    This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io) and Google Earth Engine.
     The app is deployed on Google Cloud Run, and uses Github Actions for CI/CD
     """
 )
@@ -26,7 +26,7 @@ st.markdown(
 st.header("Instructions")
 
 markdown = """
-1. You can find my [GitHub repository](https://github.com/dojowahi) 
+1. You can find my [GitHub repository](https://github.com/dojowahi)
 2. Connect with me [LinkedIn](https://www.linkedin.com/in/ankur-wahi-7a20b92/)
 """
 

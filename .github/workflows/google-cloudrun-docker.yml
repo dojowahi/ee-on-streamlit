@@ -71,7 +71,7 @@ jobs:
 
     - name: Run checks
       run: |
-        flake8 --ignore=E501 $(git ls-files '*.py')
+        flake8 --ignore=E501,W503 $(git ls-files '*.py')
   build:
     # Add 'id-token' with the intended permissions for workload identity federation
     name: build
