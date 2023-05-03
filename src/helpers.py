@@ -134,16 +134,10 @@ def get_building(wildfire_vector, county):
         logging.info("Query:", load_query)
 
         bq_df = client.query(load_query)
-        time.sleep(5)
-
-        if bq_df.state == "DONE":
-            if bq_df.errors:
-                print(f"Query job failed with errors: {bq_df.errors}")
-            else:
-                building_poly = client.query(list_building).to_dataframe()
-                return building_poly
-        else:
-            print("Query job has not completed yet.")
+        time.sleep(7)
+        logging.info("Query State", bq_df.state)
+        building_poly = client.query(list_building).to_dataframe()
+        return building_poly
 
     except Exception as e:
         st.error(f"Error retrieving data. Exception: {e}")
