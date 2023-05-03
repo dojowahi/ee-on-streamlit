@@ -84,7 +84,7 @@ def app():
 
                     if building_list is None or building_list.loc[0][0] is None:
                         building_geojson = None
-                        st.write("No wildfires/buildings detected")
+                        st.write("No buildings affected by wildfires")
                     else:
                         building_geojson = json.loads(building_list.loc[0][0])
                         eeBuilding = ee.Geometry(building_geojson)
