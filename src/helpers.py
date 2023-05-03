@@ -133,9 +133,17 @@ def get_building(wildfire_vector, county):
 
         logging.info("Query:", load_query)
 
-        bq_df = client.query(load_query)
-        time.sleep(7)
-        logging.info("Query State", bq_df.state)
+        query_job = client.query(load_query)
+
+        while query_job.state != "DONE":
+            time.sleep(10)
+            logging.info("Query State", query_job.state)
+            if query_job.errors is not None:
+                raise Exception(
+                    "Bigquery job failed with error {}".format(query_job.errors)
+                )
+            query_job = client.get_job(query_job.job_id, location=query_job.location)
+
         building_poly = client.query(list_building).to_dataframe()
         return building_poly
 
